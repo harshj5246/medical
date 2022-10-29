@@ -1,0 +1,7 @@
+D:\c#\test_A\obj\Debug\net6.0-windows\test_A.csproj.AssemblyReference.cache
+D:\c#\test_A\obj\Debug\net6.0-windows\Login.g.cs
+D:\c#\test_A\obj\Debug\net6.0-windows\MainWindow.g.cs
+D:\c#\test_A\obj\Debug\net6.0-windows\Register.g.cs
+D:\c#\test_A\obj\Debug\net6.0-windows\App.g.cs
+D:\c#\test_A\obj\Debug\net6.0-windows\test_A_MarkupCompile.cache
+D:\c#\test_A\obj\Debug\net6.0-windows\test_A_MarkupCompile.lref

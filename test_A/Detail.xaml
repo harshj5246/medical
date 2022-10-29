@@ -1,0 +1,76 @@
+﻿<Window x:Class="test_A.Detail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:test_A"
+        mc:Ignorable="d"
+        Title="Detail" Height="450" Width="855" >
+    <Canvas  DataContext="{Binding Path=SelectedItem,ElementName=dtg_Grddetail }"  Grid.Row="2" Margin="0,0,-71,0">
+        <Canvas.Background>
+            <ImageBrush ImageSource="/m1.jpg"/>
+        </Canvas.Background>
+        <DataGrid x:Name="dtg_Grddetail" HorizontalAlignment="Left" 
+            Height="247" Margin="19,102,0,0" 
+            VerticalAlignment="Top" 
+            Width="432"
+            AutoGenerateColumns="False" SelectionMode="Single" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding  Patient_id}"  Header="Patient Id" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Patient_name}" Header="Patient Name" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding date_of_registration}" Header="Date Of Registration" IsReadOnly="True"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label x:Name="LblPatientId" Content="Patient ID" Height="28" Width="77" FontWeight="Bold" FontSize="14" FontFamily="Arial Unicode MS" Canvas.Left="469" Canvas.Top="55"/>
+        <Label x:Name="LblPatientName" Content="Patient Name" Height="28" Width="97" FontWeight="Bold" FontSize="14" FontFamily="Arial Unicode MS" Canvas.Left="469" Canvas.Top="105"/>
+        <Label x:Name="LblPatientRegistration" Content="Date Of registration" Height="28" Width="137" FontWeight="Bold" FontSize="14" FontFamily="Arial Unicode MS" Canvas.Left="469" Canvas.Top="155"/>
+
+        <TextBox x:Name="TxtPatientID" Text="{Binding Path=Patient_id}" Height="28"  TextWrapping="Wrap" Width="222" Background="White" VerticalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Hidden" Canvas.Left="608" Canvas.Top="55" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TxtPatientName" Text="{Binding Path=Patient_name}" Height="28"  TextWrapping="Wrap" Width="222" Background="White" VerticalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Hidden" Canvas.Left="608" Canvas.Top="105"/>
+        <TextBox x:Name="TxtPatientRegistration" Text="{Binding Path=date_of_registration}" Height="28"  TextWrapping="Wrap" Width="222" Background="White" VerticalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Hidden" Canvas.Left="608" Canvas.Top="155"/>
+
+        <Button x:Name="BtnSave" Content="Add" Width="95"  Height="37" Click="BtnSave_Click" Canvas.Left="492" Canvas.Top="248">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="BtnLoad" Content="Load"  Width="95"  Height="41" Click="BtnLoad_Click" Canvas.Left="492" Canvas.Top="308" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="BtnEdit" Content="Edit" Width="98"  Height="37" Click="BtnEdit_Click" Canvas.Left="682" Canvas.Top="248">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="BtnDelete" Content="Delete" Width="98"  Height="41" Click="BtnDelete_Click" Canvas.Left="682" Canvas.Top="308">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <ComboBox Name="name" ItemsSource="{Binding Path=doctor_name}" DisplayMemberPath="Doctor" Canvas.Left="47" Canvas.Top="39" Width="132" Height="30" SelectionChanged="name_SelectionChanged">
+            <ComboBox.ItemBindingGroup>
+                <BindingGroup/>
+            </ComboBox.ItemBindingGroup>
+        </ComboBox>
+
+    </Canvas>
+</Window>

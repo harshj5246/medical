@@ -1,0 +1,29 @@
+CREATE TABLE [dbo].[Users] (
+    [UserName]        VARCHAR (50) NOT NULL,
+    [FullName]        VARCHAR (50) NOT NULL,
+    [EmailId]         VARCHAR (50) NOT NULL,
+    [PhoneNo]         BIGINT       NOT NULL,
+    [Gender]          VARCHAR (50) NOT NULL,
+    [Password]        VARCHAR (50) NOT NULL,
+    [ConfirmPassword] VARCHAR (50) NOT NULL,
+    [DOB]             VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([UserName] ASC),
+    UNIQUE NONCLUSTERED ([EmailId] ASC)
+);
+
+
+CREATE TABLE [dbo].[Doctor] (
+    [doctor_id]   INT          IDENTITY (100001, 4) NOT NULL,
+    [doctor_name] VARCHAR (50) NOT NULL,
+    [designation] VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([doctor_id] ASC)
+);
+
+
+CREATE TABLE [dbo].[Patient] (
+    [Patient_id]           INT          IDENTITY (100001, 2) NOT NULL,
+    [Patient_name]         VARCHAR (50) NOT NULL,
+    [date_of_registration] VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Patient_id] ASC)
+);
+
